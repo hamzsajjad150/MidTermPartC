@@ -5,34 +5,40 @@
  */
 package midtermexam_versiona_extensioncode;
 
+import java.util.Arrays;
+
 /**
- * The user profile for the OnlineVids system. The user has a userID
- * and a favourite genre that must be one of the choices in the
- * genres array. This code is to be used for SYST 17796 midterm exam.
- * Students are reminded to add themselves as modifiers when editing the
- * code.
+ * The user profile for the OnlineVids system. The user has a userID and a
+ * favourite genre that must be one of the choices in the genres array. This
+ * code is to be used for SYST 17796 midterm exam. Students are reminded to add
+ * themselves as modifiers when editing the code.
+ *
  * @author dancye, 2019
  */
-public class UserProfile 
-{
-    
+public class UserProfile {
+
     private String userID;//the userID
     private String genre;// the user's preferred genre of movie
-    private String[] genres = {"Comedy", "Drama", "Action", "Mystery"};//available genres of movies
-    
+    protected String[] genres = {"Comedy", "Drama", "Action", "Mystery"};//available genres of movies
+
     /**
      * A constructor that takes in the userID and the favourite genre
+     *
      * @param givenID the ID to assign to this user
      * @param givenGenre the users favourite genre
      */
-    public UserProfile(String givenID, String givenGenre)
-    {
+    public UserProfile() {
+
+    }
+
+    public UserProfile(String givenID, String givenGenre) {
         userID = givenID;
-        genre= givenGenre;
+        genre = givenGenre;
     }
 
     /**
      * A getter for the userID
+     *
      * @return the userID
      */
     public String getUserID() {
@@ -48,6 +54,7 @@ public class UserProfile
 
     /**
      * A getter for the genre
+     *
      * @return the genre
      */
     public String getGenre() {
@@ -60,9 +67,11 @@ public class UserProfile
     public void setGenre(String genre) {
         this.genre = genre;
     }
-    
-    
-    
-    
+
+    @Override
+    public String toString() {
+        return "your account has been Created\n" + " userID = " + userID 
+                + "\ngenre = " + genre;
+    }
     
 }//end class
